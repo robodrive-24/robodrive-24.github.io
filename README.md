@@ -1,1 +1,1 @@
-# RoboDepth Competition @ ICRA 2023
+# RoboDrive Competition @ ICRA 2024
