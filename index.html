@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<!-- seasondepth@GPU1:~/SeasonDepth_Challenge/index$ sudo jekyll s build --port 80 --host 128.237.67.127 -->
+
+<html lang="en">
+
+<head>
+    <!-- Don't forget to modify directory back:
+        hint:paste the following prefix under people
+    ${APP_PATH}/static/people-image/-->
+    <!-- <%
+        pageContext.setAttribute("APP_PATH", ".");
+    %> -->
+    <title>RoboDrive Challenge</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="navbar-top-fixed.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <link href="jiaun.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less">
+    <link href="carousel.css" rel="stylesheet">
+    <link href="pricing.css" rel="stylesheet">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript">
+        // alert(window.location.href);
+    var index = "http://seasondepth-challenge.org/index/";
+    var index_ = "http://seasondepth-challenge.org/index";
+    if ((index == window.location.href) || (index_ == window.location.href))
+        window.location.href = "http://seasondepth-challenge.org/";
+</script>
+    <script>function myFunction()
+        {
+            confirm("For the evaluation, please send the depth maps as a .zip file to the email (seasondepth@outlook.com) with cc'ing to (hanjianghu@cmu.edu) and (yangbaoquan@sjtu.edu.cn).");
+            // alert("你好，我是一个警告框！");
+        }</script>
+    <style>
+        .container1 {
+            position: relative;
+            width: 100%;
+            max-width: 5000px;
+        }
+        
+        .modal-content {
+            border: 2px solid rgb(255, 187, 0);
+            background-color: rgb(0, 0, 0);
+            border-radius: 15px;
+        }
+        
+        .modal-header {
+            background-color: rgb(255, 187, 0);
+            border: 2px solid rgb(255, 187, 0);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .modal-footer {
+            border-top: 0 none;
+        }
+        
+        .container1 img {
+            width: 100%;
+            height: auto;
+        }
+        
+         :target:before {
+            content: "";
+            display: block;
+            height: 100px;
+            margin: -90px 0 0;
+        }
+        
+        .container1 .btn {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: rgb(255, 187, 0);
+            color: white;
+            font-size: 20px;
+            padding: 18px 280px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .container1 .btn:hover {
+            background-color: black;
+        }
+        
+        .mx-a {}
+        
+        .text-cen {}
+        
+        .mb-6 {}
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="modal" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-black modal-title">Welcome to sign up!</h4>
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <!-- <h4 id="myModalLabel" class="text-black modal-title">Sign Up</h4>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col control-label">User Name</label>
+                            <div class="col">
+                                <input type="text" name="userName" class="form-control" id="userName_add_input" placeholder="e.g. Alice">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label">Email</label>
+                            <div class="col">
+                                <input type="text" name="eMail" class="form-control" id="eMail_add_input" placeholder="e.g. alice@example.com">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label">Password</label>
+                            <div class="col">
+                                <input type="password" name="passWord" class="form-control" id="passWord_add_input" placeholder="e.g. 123456">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label">Confirm Password</label>
+                            <div class="col">
+                                <input type="password" name="confirmPassword" class="form-control" id="confirmPassword_add_input" placeholder="e.g. 123456">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label">Verification Code</label>
+                            <div class="col">
+                                <input type="text" name="verifyCode" class="form-control" id="verify_code_input" placeholder="4-digit code sent to your email address">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" id="send_code_btn">SendCode</button>
+                    <button type="button" class="btn btn-warning" id="user_save_btn">Sign up now</button>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-black modal-title">Welcome back!</h4>
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <!-- <h4 id="myModalLabel" class="text-black modal-title">Sign Up</h4>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col control-label">User Name</label>
+                            <div class="col">
+                                <input type="text" name="userName" class="form-control" id="userName_add_input" placeholder="e.g. Alice">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label">Password</label>
+                            <div class="col">
+                                <input type="password" name="passWord" class="form-control" id="passWord_add_input" placeholder="e.g. 123456">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-warning" id="user_save_btn">Login</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bg-black">
+        <header class="p-3 text-white fixed-top" style="background-color:#252727;">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center">
+
+                    <a href="./index.html"><img src="brand.png" class="navbar-brand" width="50"></a>
+                    <ul class="nav col-lg-auto me-lg-auto mb-md-0">
+                        <li class="align-content-center nav-item">
+                            <a href="#introduction" class="nav-link text-white">
+                                <a1>Intro</a1>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tracks" class="nav-link text-white">
+                                <a1>Tracks</a1>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#evaluation" class="nav-link text-white">
+                                <a1>Evaluation</a1>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#awards" class="nav-link text-white">
+                                <a1>Awards</a1>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#timeline" class="nav-link text-white">
+                                <a1>Timeline</a1>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="./ICRA2022.html" class="nav-link text-white">
+                                <a1>ICRA2022</a1>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="#organizers" class="nav-link text-white">
+                                <a1>Organizers</a1>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <div class="text-end">
+                        <button type="button" class="btn btn-outline-light me-2" id="login_btn" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                        <button type="button" class="btn btn-warning" id="signup_btn" data-bs-toggle="modal" data-bs-target="#signup">Login</button>
+                    </div> -->
+                </div>
+            </div>
+        </header>
+        <div class="container1">
+            <a href="http://research.baidu.com/" target="_blank"><img1><img src="cover.png" class="img-fluid" alt="img-responsive"></img1></a>
+        </div>
+        <div class="container p-4 anchor">
+            <h1 class="text-white" id="introduction">Introduction</h1>
+            <hr>
+            <p class="text-white-50">
+                Depth estimation from monocular and stereo images plays an essential role in real-world visual perception systems. 
+                Although promising results have been achieved, the current learning-based depth estimation models are trained and tested on clean datasets while ignoring the out-of-distribution (OoD) situations. 
+                Common corruptions, however, tend to happen in practical scenarios, which is safety-critical for applications like autonomous driving and robot navigation. 
+                To raise attention among the community to robust depth estimation, we propose the <strong>RoboDepth</strong> challenge.
+            </p>
+            <p class="text-white-50">
+                Our RoboDepth is the very first benchmark that targets probing the OoD robustness of depth estimation models under common corruptions. 
+                There are 18 corruption types in total, ranging from three perspectives: 
+            </p>
+            <p class="text-white-50">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                1. Weather and lighting conditions, such as sunny, low-light, fog, frost, snow, contrast, etc.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                2. Sensor failure and movement, such as potential blurs (defocus, glass, motion, zoom) caused by motion.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                3. Data processing issues, such as noises (Gaussian, impulse, ISO) happen due to hardware malfunctions.
+            </p>
+            <p class="text-white-50">
+                <strong>Toolkit:</strong> <a href="https://github.com/ldkong1205/RoboDepth">https://github.com/ldkong1205/RoboDepth</a>.<br>
+                <strong>Contact:</strong> <a href="mailto:robodepth@outlook.com">robodepth@outlook.com</a>.
+            </p>
+
+            <p class="text-white-50">
+                This competition is sponsored by <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>.
+            </p>
+            
+            
+            
+            <br><br>
+
+            <h1 class="text-white" id="tracks">Challenge Tracks</h1>
+            <hr>
+
+            <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
+                <div class="col">
+                    <div class="card rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 1&nbsp;</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust BEV Detection Track</h3>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Only monocular sequences are used for model training without the supervision of depth maps</li>
+                            </ul>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 1</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 2</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust Depth Estimation Track</h3>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li> The participants can make full use of all depth maps released to train the model</li>
+                            </ul>
+
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 2</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br><br>
+
+
+            <h1 class="text-white" id="evaluation">Submission & Evaluation</h1>
+            <hr>
+
+            <p class="text-white-50">
+                In both two tracks, the participants are expected to submit their predictions to the CodaLab server for model evaluation. 
+                In order to make a successful submission and evaluation, you need to follow the instructions listed <a href="https://github.com/ldkong1205/RoboDepth/tree/main/competition">here</a>,
+                including: <sup>1</sup>registration, <sup>2</sup>file preparation, <sup>3</sup>submission & evaluation, and <sup>4</sup>result view.
+            </p>
+            
+            <br><br>
+
+            
+            <h1 class="text-white" id="awards">Awards</h1>
+            <hr>
+
+            <!-- <p class="text-white-50">The awards might be able to increase to $3000 if the performance improvement is exceptional and significant.</p> -->
+            <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
+                <div class="col">
+                    <div class="card rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 1&nbsp;</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust BEV Detection Track</h3>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>1st prize: $ 500</li>
+                                <li>2nd prize: $ 300</li>
+                                <li>3rd prize: $ 200</li>
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-outline-warning"  onclick="myFunction()">Get started</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 2</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust Depth Estimation Track</h3>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>1st prize: $ 500</li>
+                                <li>2nd prize: $ 300</li>
+                                <li>3rd prize: $ 200</li>
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-warning" onclick="myFunction()">Get started</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br><br>
+
+
+            <h1 class="text-white" id="timeline">Timeline</h1>
+            <hr>
+
+            <div id="timeline-content">
+                <ul class="timeline">
+                    <li class="event" data-date="Dec 24, 2023">
+                        <h3>Release of Training and Evaluation Data</h3>
+                        <!-- <p>Training and validation set availabe <a href="https://seasondepth.github.io/">here</a></p> -->
+                        <p>Download the data from the competition toolkit.&nbsp;</p>
+                    </li>
+                    <li class="event" data-date="Jan 01, 2024">
+                        <h3>Competition Server Online @ CodaLab</h3>
+                        <!-- <p>Training and validation set availabe <a href="https://seasondepth.github.io/">here</a></p> -->
+                        <!-- <p>To be available soon.</p> -->
+                    </li>
+                    <li class="event" id="date" data-date="Apr 30, 2024">
+                        <h3>Submission Deadline</h3>
+                        <p></p>
+                        <p>Don't forget to include the code link in your submissions.&nbsp;</p>
+                    </li>
+
+                    <li class="event" data-date="May 17, 2024">
+
+                        <h3>Award Decision Announcement</h3>
+                        <p></p>
+                        <p>Associated with the ICRA 2024 conference formality.&nbsp;</p>
+
+                        <!-- <p>Get up to $3,000 !</p> -->
+                    </li>
+                </ul>
+            </div>
+
+
+            <br><br>
+
+
+            <h1 class="text-white" id="organizers">Organizers</h1>
+            <hr>
+            <div class="container text-center p-1 text-white">
+                <!-- Three columns of text below the carousel -->
+                <div class="row">
+
+                    <div class="col"> <img src="static/people-image/lingdong.jpg" class="rounded-circle" width="135">
+                        <h4>Lingdong Kong</h4>
+                        <p>
+                            <small>NUS Computing</small>
+                        </p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/shaoyuan.jpeg" class="rounded-circle" width="135">
+                        <h4>Shaoyuan Xie</h4>
+                        <p>
+                            <small>UC, Irvine</small>
+                        </p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/hanjiang.png" class="rounded-circle" width="135">
+                        <h4>Hanjiang Hu</h4>
+                        <p>
+                            <small>Carnegie Mellon</small>
+                        </p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/yaru.jpeg" class="rounded-circle" width="135">
+                        <h4>Yaru Niu</a></h4>
+                        <p>
+                            <small>Carnegie Mellon</small>
+                        </p>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+            <br/>
+
+            <div class="container text-center p-1 text-white">
+                <!-- Three columns of text below the carousel -->
+                <div class="row">
+                    <!-- /.col-lg-4 -->
+                    <div class="col"> <img src="static/people-image/weitsang.jpeg" class="rounded-circle" width="135">
+                        <h4>Wei Tsang Ooi</a></h4>
+                        <p><small>NUS Computing</small></p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/benoit.png" class="rounded-circle" width="135">
+                        <h4>Benoit Cottereau</h4>
+                        <p><small>CNRS & IPAL</small></p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/laixing.jpeg" class="rounded-circle" width="135">
+                        <h4>Lai Xing Ng</a></h4>
+                        <p>
+                            <small>A*STAR, I2R</small>
+                        </p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/yuexin.jpeg" class="rounded-circle" width="135">
+                        <h4>Yuexin Ma</a></h4>
+                        <p>
+                            <small>Shanghai Tech</small>
+                        </p>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+            <br/>
+
+            <div class="container text-center p-1 text-white">
+                <!-- Three columns of text below the carousel -->
+                <div class="row">
+                    <!-- /.col-lg-4 -->
+
+                    <div class="col"> <img src="static/people-image/wenwei.png" class="rounded-circle" width="135">
+                        <h4>Wenwei Zhang</h4>
+                        <p><small>Shanghai AI Lab</small></p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/liang_pan.jpeg" class="rounded-circle" width="135">
+                        <h4>Liang Pan</h4>
+                        <p><small>Shanghai AI Lab</small></p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/kai_chen.jpeg" class="rounded-circle" width="135">
+                        <h4>Kai Chen</h4>
+                        <p><small>Shanghai AI Lab</small></p>
+                    </div>
+
+                    <div class="col"> <img src="static/people-image/ziwei.png" class="rounded-circle" width="135">
+                        <h4>Ziwei Liu</a></h4>
+                        <p><small>NTU, S-Lab</p>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+            
+            
+
+            <br><br>
+
+
+            <h1 class="text-white" id="organizers">Acknowledgements</h1>
+            <hr>
+
+            <p class="text-white-50"> Special thanks to Jiarun Wei and Shuai Wang for building up the original template from the <a href="http://seasondepth-challenge.org/">SeasonDepth</a> website.</p>
+            
+
+            <br><br>
+
+            <h1 class="text-white" id="organizers">Sponsor</h1>
+            <hr>
+
+            <p class="text-white-50"> We thank <a href="http://research.baidu.com/">Baidu Research</a> for the support towards this competition.
+            
+            
+            <br><br>
+
+            <h1 class="text-white" id="organizers">Affiliations</h1>
+            <hr>
+            
+            
+            <p class="text-white-50">
+                This project is supported by <a href="https://descartes.cnrsatcreate.cnrs.fr/">DesCartes</a>, a <a href="https://www.cnrsatcreate.cnrs.fr/">CNRS@CREATE</a> program on Intelligent Modeling for Decision-Making in Critical Urban Systems.
+            </p>
+            <p class="text-white-50">
+                We are actively looking for more sponsors. If you are interested, please contact <a href="mailto:robodepth@outlook.com">robodepth@outlook.com</a>.
+            </p>
+            
+            <img1><img src="static/people-image/sponsors.png" class="img-fluid" alt="img-responsive"></img1>
+
+
+            <br><br><br><br>
+
+            <h1 class="text-white" id="organizers">Terms & Conditions</h1>
+            <hr>
+
+            <p class="text-white-50">
+            This competition is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation.
+            Permission is granted to use the data given that you agree:
+            </p>
+            <p class="text-white-50">
+            1. That the data in this competition comes “AS IS”, without express or implied warranty. Although every effort has been made to ensure accuracy, we do not accept any responsibility for errors or omissions.<br>
+            2. That you may not use the data in this competition or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.<br>
+            3. That you include a reference to RoboDepth (including the benchmark data and the specially generated data for academic challenges) in any work that makes use of the benchmark. For research papers, please cite our preferred publications as listed on our webpage.
+            </p>
+
+            <p class="text-white-50">
+            To ensure a fair comparison among all participants, we require:
+            </p>
+
+            <p class="text-white-50">
+            1. All participants must follow the exact same data configuration when training and evaluating their algorithms. Please do not use any public or private datasets other than those specified for model training.<br>
+            2. The theme of this competition is to probe the out-of-distribution robustness of depth estimation models. Theorefore, any use of the 18 corruption types designed in this benchmark is strictly prohibited, including any atomic operation that is comprising any one of the mentioned corruptions.<br>
+            3. To ensure the above two rules are followed, each participant is requested to submit the code with reproducible results before the final result is announced; the code is for examination purposes only and we will manually verify the training and evaluation of each participant's model.
+            </p>
+
+            <footer class="container p-5">
+                <p class="float-lg-end"><a href="#">Back to top</a></p>
+                <p class="text-white">&copy; The RoboDrive Organizing Team. All Rights Researved.</p>
+            </footer>
+        </div>
+        <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
