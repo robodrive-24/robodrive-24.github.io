@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 
-<!-- seasondepth@GPU1:~/SeasonDepth_Challenge/index$ sudo jekyll s build --port 80 --host 128.237.67.127 -->
-
 <html lang="en">
 
 <head>
-    <!-- Don't forget to modify directory back:
-        hint:paste the following prefix under people
-    ${APP_PATH}/static/people-image/-->
-    <!-- <%
-        pageContext.setAttribute("APP_PATH", ".");
-    %> -->
     <title>RoboDrive Challenge</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -46,14 +38,14 @@
         }
         
         .modal-content {
-            border: 2px solid rgb(255, 187, 0);
+            border: 2px solid rgb(0, 128, 204);
             background-color: rgb(0, 0, 0);
             border-radius: 15px;
         }
         
         .modal-header {
-            background-color: rgb(255, 187, 0);
-            border: 2px solid rgb(255, 187, 0);
+            background-color: rgb(0, 128, 204);
+            border: 2px solid rgb(0, 128, 204);
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
@@ -80,7 +72,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
-            background-color: rgb(255, 187, 0);
+            background-color: rgb(0, 128, 204);
             color: white;
             font-size: 20px;
             padding: 18px 280px;
@@ -253,7 +245,7 @@
             </div>
         </header>
         <div class="container1">
-            <a href="http://research.baidu.com/" target="_blank"><img1><img src="cover.png" class="img-fluid" alt="img-responsive"></img1></a>
+            <a href="https://www.shlab.org.cn/" target="_blank"><img1><img src="cover.png" class="img-fluid" alt="img-responsive"></img1></a>
         </div>
         <div class="container p-4 anchor">
             <h1 class="text-white" id="introduction">Introduction</h1>
@@ -264,6 +256,10 @@
                 Common corruptions, however, tend to happen in practical scenarios, which is safety-critical for applications like autonomous driving and robot navigation. 
                 To raise attention among the community to robust depth estimation, we propose the <strong>RoboDepth</strong> challenge.
             </p>
+
+            <img1><img src="static/people-image/teaser.png" class="img-fluid" alt="img-responsive"></img1>
+
+
             <p class="text-white-50">
                 Our RoboDepth is the very first benchmark that targets probing the OoD robustness of depth estimation models under common corruptions. 
                 There are 18 corruption types in total, ranging from three perspectives: 
@@ -296,7 +292,7 @@
                 <div class="col">
                     <div class="card rounded-3 shadow-sm">
                         <div class="card-header py-3 bg-warning">
-                            <h4 class="my-0 fw-normal text-black">Track 1&nbsp;</h4>
+                            <h4 class="my-0 fw-normal text-black">Track 1</h4>
                         </div>
                         <div class="card-body bg-black">
                             <h3>Robust BEV Detection Track</h3>
@@ -323,6 +319,36 @@
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 3</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust Map Segmentation Track</h3>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Only monocular sequences are used for model training without the supervision of depth maps</li>
+                            </ul>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 3</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-warning">
+                            <h4 class="my-0 fw-normal text-black">Track 4</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust Occupancy Prediction Track</h3>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li> The participants can make full use of all depth maps released to train the model</li>
+                            </ul>
+
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 4</button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -343,9 +369,12 @@
             
             <h1 class="text-white" id="awards">Awards</h1>
             <hr>
+            <p class="text-white-50">
+                To be announced.
+            </p>
 
             <!-- <p class="text-white-50">The awards might be able to increase to $3000 if the performance improvement is exceptional and significant.</p> -->
-            <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
+            <!-- <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
                 <div class="col">
                     <div class="card rounded-3 shadow-sm">
                         <div class="card-header py-3 bg-warning">
@@ -358,7 +387,6 @@
                                 <li>2nd prize: $ 300</li>
                                 <li>3rd prize: $ 200</li>
                             </ul>
-                            <!-- <button type="button" class="w-100 btn btn-lg btn-outline-warning"  onclick="myFunction()">Get started</button> -->
                         </div>
                     </div>
                 </div>
@@ -374,11 +402,10 @@
                                 <li>2nd prize: $ 300</li>
                                 <li>3rd prize: $ 200</li>
                             </ul>
-                            <!-- <button type="button" class="w-100 btn btn-lg btn-warning" onclick="myFunction()">Get started</button> -->
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
             <br><br>
@@ -426,28 +453,28 @@
                 <!-- Three columns of text below the carousel -->
                 <div class="row">
 
-                    <div class="col"> <img src="static/people-image/lingdong.jpg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/lingdong.jpg" class="rounded-circle" width="138">
                         <h4>Lingdong Kong</h4>
                         <p>
                             <small>NUS Computing</small>
                         </p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/shaoyuan.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/shaoyuan.jpeg" class="rounded-circle" width="138">
                         <h4>Shaoyuan Xie</h4>
                         <p>
                             <small>UC, Irvine</small>
                         </p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/hanjiang.png" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/hanjiang.png" class="rounded-circle" width="138">
                         <h4>Hanjiang Hu</h4>
                         <p>
                             <small>Carnegie Mellon</small>
                         </p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/yaru.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/yaru.jpeg" class="rounded-circle" width="138">
                         <h4>Yaru Niu</a></h4>
                         <p>
                             <small>Carnegie Mellon</small>
@@ -464,24 +491,24 @@
                 <!-- Three columns of text below the carousel -->
                 <div class="row">
                     <!-- /.col-lg-4 -->
-                    <div class="col"> <img src="static/people-image/weitsang.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/weitsang.jpeg" class="rounded-circle" width="138">
                         <h4>Wei Tsang Ooi</a></h4>
                         <p><small>NUS Computing</small></p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/benoit.png" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/benoit.png" class="rounded-circle" width="138">
                         <h4>Benoit Cottereau</h4>
                         <p><small>CNRS & IPAL</small></p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/laixing.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/laixing.jpeg" class="rounded-circle" width="138">
                         <h4>Lai Xing Ng</a></h4>
                         <p>
                             <small>A*STAR, I2R</small>
                         </p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/yuexin.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/yuexin.jpeg" class="rounded-circle" width="138">
                         <h4>Yuexin Ma</a></h4>
                         <p>
                             <small>Shanghai Tech</small>
@@ -499,22 +526,22 @@
                 <div class="row">
                     <!-- /.col-lg-4 -->
 
-                    <div class="col"> <img src="static/people-image/wenwei.png" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/wenwei.png" class="rounded-circle" width="138">
                         <h4>Wenwei Zhang</h4>
                         <p><small>Shanghai AI Lab</small></p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/liang_pan.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/liang_pan.jpeg" class="rounded-circle" width="138">
                         <h4>Liang Pan</h4>
                         <p><small>Shanghai AI Lab</small></p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/kai_chen.jpeg" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/kai_chen.jpeg" class="rounded-circle" width="138">
                         <h4>Kai Chen</h4>
                         <p><small>Shanghai AI Lab</small></p>
                     </div>
 
-                    <div class="col"> <img src="static/people-image/ziwei.png" class="rounded-circle" width="135">
+                    <div class="col"> <img src="static/people-image/ziwei.png" class="rounded-circle" width="138">
                         <h4>Ziwei Liu</a></h4>
                         <p><small>NTU, S-Lab</p>
                     </div>
