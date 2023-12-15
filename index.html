@@ -251,101 +251,133 @@
             <h1 class="text-white" id="introduction">Introduction</h1>
             <hr>
             <p class="text-white-50">
-                Depth estimation from monocular and stereo images plays an essential role in real-world visual perception systems. 
-                Although promising results have been achieved, the current learning-based depth estimation models are trained and tested on clean datasets while ignoring the out-of-distribution (OoD) situations. 
-                Common corruptions, however, tend to happen in practical scenarios, which is safety-critical for applications like autonomous driving and robot navigation. 
-                To raise attention among the community to robust depth estimation, we propose the <strong>RoboDepth</strong> challenge.
+                In the rapidly evolving domain of autonomous driving, the accuracy and resilience of perception systems are paramount.
+                Recent advancements, particularly in bird's eye view (BEV) representations and LiDAR sensing technologies, have significantly improved in-vehicle 3D scene perception.
+            </p>
+
+            <p class="text-white-50">
+                Yet, the robustness of 3D scene perception methods under varied and challenging conditions — integral to ensuring safe operations — has been insufficiently assessed.
+                To fill in the existing gap, we introduce <strong>The RoboDrive Challenge</strong>, seeking to push the frontiers of robust autonomous driving perception.
+            </p>
+
+            <p class="text-white-50">
+                RoboDrive is one of the first benchmarks that targeted probing the Out-of-Distribution (OoD) robustness of autonomous driving perception models under <strong>common corruptions</strong> and <strong>sensor failures</strong>. 
+            </p>
+
+            <p class="text-white-50">
+                There are six real-world corruption types in total, ranging from three perspectives: 
+            </p>
+
+            <p class="text-white-50">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                - Weather and lighting conditions, such as bright, low-light, foggy, and snowy conditions.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                - Movement and acquisition failures, such as potential blurs caused by vehicle motions.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                - Data processing issues, such as noises and quantizations happen due to hardware malfunctions.
+            </p>
+
+            <p class="text-white-50">
+                Additionally, we aim to probe the 3D scene perception robustness under camera and LiDAR sensor failures.
             </p>
 
             <img1><img src="static/people-image/teaser.png" class="img-fluid" alt="img-responsive"></img1>
 
 
-            <p class="text-white-50">
-                Our RoboDepth is the very first benchmark that targets probing the OoD robustness of depth estimation models under common corruptions. 
-                There are 18 corruption types in total, ranging from three perspectives: 
-            </p>
-            <p class="text-white-50">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                1. Weather and lighting conditions, such as sunny, low-light, fog, frost, snow, contrast, etc.
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;
-                2. Sensor failure and movement, such as potential blurs (defocus, glass, motion, zoom) caused by motion.
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;
-                3. Data processing issues, such as noises (Gaussian, impulse, ISO) happen due to hardware malfunctions.
-            </p>
-            <p class="text-white-50">
+
+            <!-- <p class="text-white-50">
                 <strong>Toolkit:</strong> <a href="https://github.com/robodrive-24/toolkit" target="_blank">https://github.com/robodrive-24/toolkit</a>.<br>
-                <strong>Contact:</strong> <a href="mailto:robodrive.2024@gmail.com" target="_blank">robodrive.2024@gmail.com</a>.
             </p>
+            <p class="text-white-50">
+                <strong>Contact:</strong> <a href="mailto:robodrive.2024@gmail.com" target="_blank">robodrive.2024@gmail.com</a>.
+            </p> -->
 
             <!-- <p class="text-white-50">
                 This competition is hosted by <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>.
             </p> -->
+
+
+
+            <br/><br/>
+
+            <h1 class="text-white" id="tracks">Venue</h1>
+            <hr/>
+            <p class="text-white-50">
+                The RoboDrive Challenge is affiliated with the 41st IEEE Conference on Robotics and Automation (ICRA 2024).
+            </p>
+
+            <p class="text-white-50">
+                ICRA is IEEE Robotics and Automation Society's flagship conference. ICRA 2024 will be held from May 13th to 17th, 2024, in Yokohama, Japan.
+            </p>
+
+            <p class="text-white-50">
+                For additional details, kindly refer to the ICRA 2024 <a href="https://2024.ieee-icra.org/" target="_blank">website</a>.
+            </p>
             
             
-            
-            <br><br>
+            <br/><br/>
 
             <h1 class="text-white" id="tracks">Challenge Tracks</h1>
-            <hr>
+            <hr/>
 
             <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
                 <div class="col">
                     <div class="card rounded-3 shadow-sm">
-                        <div class="card-header py-3 bg-warning">
+                        <div class="card-header py-3 bg-openmmlab">
                             <h4 class="my-0 fw-normal text-black">Track 1</h4>
                         </div>
                         <div class="card-body bg-black">
                             <h3>Robust BEV Detection</h3>
 
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Only monocular sequences are used for model training without the supervision of depth maps</li>
+                                <li>Evaluating the resilience of detection algorithms against diverse environmental and sensor-based corruptions</li>
                             </ul>
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 1</button></a>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-outline-warning">Evaluation Server 1</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3 bg-warning">
+                        <div class="card-header py-3 bg-openmmlab">
                             <h4 class="my-0 fw-normal text-black">Track 2</h4>
                         </div>
                         <div class="card-body bg-black">
                             <h3>Robust Map Segmentation</h3>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li> The participants can make full use of all depth maps released to train the model</li>
+                                <li>Focusing on the segmentation of complex driving scene elements in BEV maps under varied conditions</li>
                             </ul>
 
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 2</button></a>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-outline-warning">Evaluation Server 2</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card rounded-3 shadow-sm">
-                        <div class="card-header py-3 bg-warning">
+                        <div class="card-header py-3 bg-openmmlab">
                             <h4 class="my-0 fw-normal text-black">Track 3</h4>
                         </div>
                         <div class="card-body bg-black">
                             <h3>Robust Occupancy Prediction</h3>
 
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Only monocular sequences are used for model training without the supervision of depth maps</li>
+                                <li>Testing the accuracy of occupancy grid predictions in dynamic and unpredictable real-world driving environments</li>
                             </ul>
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 3</button></a>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418"><button type="button" class="w-100 btn btn-outline-warning">Evaluation Server 3</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3 bg-warning">
+                        <div class="card-header py-3 bg-openmmlab">
                             <h4 class="my-0 fw-normal text-black">Track 4</h4>
                         </div>
                         <div class="card-body bg-black">
                             <h3>Robust Depth Estimation</h3>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li> The participants can make full use of all depth maps released to train the model</li>
+                                <li>Assessing the depth estimation robustness from multiple perspectives for comprehensive 3D scene perception</li>
                             </ul>
 
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-lg btn-outline-warning disabled">Evaluation Server 4</button></a>
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821"><button type="button" class="w-100 btn btn-outline-warning">Evaluation Server 4</button></a>
                         </div>
                     </div>
                 </div>
@@ -561,7 +593,7 @@
 
             <br/><br/>
 
-            <h1 class="text-white" id="organizers">Sponsor</h1>
+            <h1 class="text-white" id="organizers">Sponsors</h1>
             <hr>
 
             <p class="text-white-50">
