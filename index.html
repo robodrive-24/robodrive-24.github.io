@@ -279,11 +279,17 @@
             </p>
 
             <p class="text-white-50">
-                RoboDrive is one of the first benchmarks that targeted probing the Out-of-Distribution (OoD) robustness of autonomous driving perception models under <strong>common corruptions</strong> and <strong>sensor failures</strong>. 
+                RoboDrive is one of the first benchmarks that targeted probing the Out-of-Distribution (OoD) robustness of state-of-the-art autonomous driving perception models, centered around two mainstream topics: <strong>common corruptions</strong> and <strong>sensor failures</strong>. 
             </p>
 
+
+            <img1><img src="teaser.png" class="img-fluid" alt="img-responsive"></img1>
+
+
+            <p class="text-white"><strong>Topic One: Corruptions</strong></p>
+
             <p class="text-white-50">
-                There are six real-world corruption types in total, ranging from three perspectives: 
+                There are eighteen real-world corruption types in total, ranging from three perspectives: 
             </p>
 
             <p class="text-white-50">
@@ -295,26 +301,39 @@
                 - Data processing issues, such as noises and quantizations happen due to hardware malfunctions.
             </p>
 
+            <p class="text-white"><strong>Topic Two: Sensor Failures</strong></p>
+
             <p class="text-white-50">
-                Additionally, we aim to probe the 3D scene perception robustness under camera and LiDAR sensor failures.
+                Additionally, we aim to probe the 3D scene perception robustness under camera and LiDAR sensor failures:
             </p>
 
-            <img1><img src="teaser.png" class="img-fluid" alt="img-responsive"></img1>
+            <p class="text-white-50">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                - Loss of certain camera frames during the driving system sensing process.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                - Loss of one or more camera views during the driving system sensing process.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                - Loss of the roof-top LiDAR view during the driving system sensing process.
+            </p>
 
+            
+            <p class="text-white"><strong>Challenge Tracks</strong></p>
 
             <p class="text-white-50">
-                There are four tracks in the RoboDrive Challenge, with emphasis on the following 3D scene perception tasks.
+                There are <strong>five tracks</strong> in this RoboDrive Challenge, with emphasis on the following 3D scene perception tasks:
             </p>
 
             <p class="text-white-50">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 - Track 1: Robust BEV Detection.
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                 - Track 2: Robust Map Segmentation.
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                 - Track 3: Robust Occupancy Prediction.
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                 - Track 4: Robust Depth Estimation.
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                - Track 5: Robust Multi-Modal BEV Detection.
             </p>
 
             <p class="text-white-50">
@@ -394,8 +413,11 @@
             
             <br/><br/>
 
-            <h1 class="text-white" id="tracks">Challenge Tracks</h1>
+            <h1 class="text-white" id="tracks">Challenge One: Corruptions</h1>
             <hr/>
+
+            <!-- <h2 class="text-white" id="tracks">Topic One: </h2>
+            <hr/> -->
 
             <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
                 <div class="col">
@@ -465,6 +487,32 @@
             <br/><br/>
 
 
+            <h1 class="text-white" id="tracks">Challenge Two: Sensor Failures</h1>
+            <hr/>
+
+            <div class="row row-cols-1 row-cols-md-2 mb-3 text-center align-content-center text-white">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3 bg-openmmlab">
+                            <h4 class="my-0 fw-normal text-black">Track 5</h4>
+                        </div>
+                        <div class="card-body bg-black">
+                            <h3>Robust Multi-Modal BEV Detection</h3>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Tailored for evaluating the reliability of advanced driving perception systems equipped with multiple types of sensors</li>
+                            </ul>
+
+                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 5</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br/><br/>
+
+
             <h1 class="text-white" id="timeline">Timeline</h1>
             <hr>
 
@@ -480,12 +528,16 @@
                         <!-- <p>Training and validation set availabe <a href="https://seasondepth.github.io/">here</a></p> -->
                         <!-- <p>To be available soon.</p> -->
                     </li>
+                    <li class="event" id="date" data-date="Mar. 31, 2024">
+                        <h3>Phase One Deadline</h3>
+                        <p></p>
+                        <p>Shortlisted teams are invited to participate in the next phase.&nbsp;</p>
+                    </li>
                     <li class="event" id="date" data-date="Apr. 30, 2024">
-                        <h3>Submission Deadline</h3>
+                        <h3>Phase Two Deadline</h3>
                         <p></p>
                         <p>Don't forget to include the code link in your submissions.&nbsp;</p>
                     </li>
-
                     <li class="event" data-date="May 17, 2024">
 
                         <h3>Award Decision Announcement</h3>
@@ -523,27 +575,32 @@
             
             <div class="container text-center p-1 text-white">
                 <div class="row">
-                    <div class="col"> <img src="static/logo-image/email.png" class="rounded-circle" width="120">
+                    <div class="col"> <img src="static/logo-image/email.png" class="rounded-circle" width="115">
                         <p></p>
                         <h5><a href="mailto:robodrive.2024@gmail.com" target="_blank">E-mail</a></h5>
                     </div>
 
-                    <div class="col"> <img src="static/logo-image/wechat.png" class="rounded-circle" width="120">
+                    <div class="col"> <img src="static/logo-image/twitter.png" class="rounded-circle" width="115">
                         <p></p>
-                        <h5><a href="" target="_blank">WeChat</a></h5>
+                        <h5><a href="" target="_blank">Twitter</a></h5>
                     </div>
 
-                    <div class="col"> <img src="static/logo-image/slack.png" class="rounded-circle" width="120">
+                    <div class="col"> <img src="static/logo-image/wechat.png" class="rounded-circle" width="115">
                         <p></p>
-                        <h5><a href="https://join.slack.com/t/icra2024robod-11m1840/shared_invite/zt-29e4nrddu-RXohq0C4nNCJUDIgRClGUg" target="_blank">Slack</a></h5>
+                        <h5><a href="wechat_qr.png" target="_blank">WeChat</a></h5>
                     </div>
 
-                    <div class="col"> <img src="static/logo-image/zhihu.png" class="rounded-circle" width="120">
+                    <div class="col"> <img src="static/logo-image/slack.png" class="rounded-circle" width="115">
                         <p></p>
-                        <h5><a href="" target="_blank">Zhihu</a></h5>
+                        <h5><a href="https://join.slack.com/t/robodrive/shared_invite/zt-29fnp2iye-QZtwxSdCchil6noIiTxoXg" target="_blank">Slack</a></h5>
                     </div>
 
-                    <div class="col"> <img src="static/logo-image/openmmlab.png" class="rounded-circle" width="120">
+                    <div class="col"> <img src="static/logo-image/zhihu.png" class="rounded-circle" width="115">
+                        <p></p>
+                        <h5><a href="https://zhuanlan.zhihu.com/p/672925784" target="_blank">Zhihu</a></h5>
+                    </div>
+
+                    <div class="col"> <img src="static/logo-image/openmmlab.png" class="rounded-circle" width="115">
                         <p></p>
                         <h5><a href="https://openmmlab.com/" target="_blank">OpenMMLab</a></h5>
                     </div>
