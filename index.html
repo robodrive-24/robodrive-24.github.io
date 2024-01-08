@@ -431,7 +431,7 @@
                             <ul class="list-unstyled mt-3 mb-4">
                                 <li>Evaluating the resilience of detection algorithms against diverse environmental and sensor-based corruptions</li>
                             </ul>
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 1</button></a>
+                            <a href="" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 1</button></a>
                         </div>
                     </div>
                 </div>
@@ -446,7 +446,7 @@
                                 <li>Focusing on the segmentation of complex driving scene elements in BEV maps under varied driving conditions</li>
                             </ul>
 
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 2</button></a>
+                            <a href="" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 2</button></a>
                         </div>
                     </div>
                 </div>
@@ -461,7 +461,7 @@
                             <ul class="list-unstyled mt-3 mb-4">
                                 <li>Testing the accuracy of occupancy grid predictions in dynamic and unpredictable real-world driving environments</li>
                             </ul>
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9418" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 3</button></a>
+                            <a href="" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 3</button></a>
                         </div>
                     </div>
                 </div>
@@ -476,7 +476,7 @@
                                 <li>Assessing the depth estimation robustness from multiple perspectives for comprehensive 3D scene perception</li>
                             </ul>
 
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 4</button></a>
+                            <a href="" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 4</button></a>
                         </div>
                     </div>
                 </div>
@@ -502,7 +502,7 @@
                                 <li>Tailored for evaluating the reliability of advanced driving perception systems equipped with multiple types of sensors</li>
                             </ul>
 
-                            <a href="https://codalab.lisn.upsaclay.fr/competitions/9821" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 5</button></a>
+                            <a href="" target="_blank"><button type="button" class="w-100 btn btn-lg btn-outline-warning">Evaluation Server 5</button></a>
                         </div>
                     </div>
                 </div>
@@ -526,7 +526,7 @@
                         <h3>Release of Training and Evaluation Data</h3>
                         <p>Download the data from the competition toolkit.&nbsp;</p>
                     </li>
-                    <li class="event" data-date="Jan. 05, 2024">
+                    <li class="event" data-date="Jan. 15, 2024">
                         <h3>Competition Servers Online @ EvalAI</h3>
                     </li>
                     <li class="event" id="date" data-date="Mar. 31, 2024">
@@ -550,19 +550,41 @@
 
 
 
-            <br><br>
+            <br/><br/>
 
 
             <h1 class="text-white" id="evaluation">Submission & Evaluation</h1>
             <hr>
 
             <p class="text-white-50">
-                For all four tracks in this RoboDrive competition, the participants are expected to submit their predictions to the <strong>EvalAI</strong> servers for model evaluation. 
+                In this competition, all participants are expected to adopt the official <a href="https://www.nuscenes.org/nuscenes" target="_blank">nuScenes</a> dataset for model training and our robustness probing sets for model evaluation.
+                Additional data sources are <strong>NOT</strong> allowed in this competition.
             </p>
+
             <p class="text-white-50">
-                In order to make successful submission and evaluation, you need to follow the instructions listed <a href="https://github.com/ldkong1205/RoboDepth/tree/main/competition" target="_blank">here</a>,
-                which includes four steps: <sup>1</sup>registration, <sup>2</sup>file preparation, <sup>3</sup>submission & evaluation, and <sup>4</sup>result view.
+                Kindly refer to <a href="https://github.com/robodrive-24/toolkit/blob/main/docs/DATA_PREPARE.md" target="_blank">DATA_PREPARE.md</a> for the details to prepare the training and evaluation data.
             </p>
+
+            <p class="text-white-50">
+                For all five tracks in this RoboDrive competition, the participants are expected to submit their predictions to the <strong>EvalAI</strong> servers for model evaluation. 
+            </p>
+
+            <p class="text-white-50">
+                To facilitate the training and evaluation, we have provided detailed instructions and a baseline model for each track. Kindly refer to <a href="https://github.com/robodrive-24/toolkit/blob/main/docs/GET_STARTED.md" target="_blank">GET_STARTED.md</a> for additional details.
+            </p>
+
+
+
+
+            <br/><br/>
+
+            <h1 class="text-white" id="organizers">FAQs</h1>
+            <hr>
+
+            <p class="text-white-50">
+                Please refer to <a href="https://github.com/robodrive-24/toolkit/blob/main/docs/GET_STARTED.md#frequently-asked-questions" target="_blank">Frequently Asked Questions</a> for more detailed rules and conditions of this competition.
+            </p>
+
 
 
 
@@ -845,13 +867,14 @@
             2. The theme of this competition is to probe the out-of-distribution robustness of autonomous driving perception models. Theorefore, any use of the corruption and sensor failure types designed in this benchmark is strictly prohibited, including any atomic operation that is comprising any one of the mentioned corruptions.<br/>
             3. To ensure the above two rules are followed, each participant is requested to submit the code with reproducible results before the final result is announced; the code is for examination purposes only and we will manually verify the training and evaluation of each participant's model.
             </p>
+            
+
 
             <footer class="container p-5">
                 <p class="float-lg-end"><a href="#">Back to Top</a></p>
                 <p class="text-white">&copy; The RoboDrive Organizing Team. All Rights Researved.</p>
             </footer>
         </div>
-        <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
     </div>
 
 
